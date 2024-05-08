@@ -1,0 +1,18 @@
+# Categorical data
+data['HomePlanet'] = pd.Categorical(data['HomePlanet'])
+data['HomePlanet'] = data['HomePlanet'].cat.codes
+
+# display
+print(data['HomePlanet'])
+
+# Convert the Age column to integer
+data['Age'] = data['Age'].astype(int)
+
+# display age before and after conversion
+print(data['Age'])
+
+# fill age with median value
+data['Age'].fillna(data['Age'].median(), inplace=True)
+
+# If variables are not in the correct data type, apply proper type conversions
+print(data['Age'])
